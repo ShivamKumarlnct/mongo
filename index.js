@@ -31,10 +31,11 @@ const User=mongoose.model('User',userSchema);
 //   console.log(err);
 // })
 
-//it is insert multiple ----------------
+// it is insert multiple ----------------
 // User.insertMany([
 //   {name:"tony",email:"tony@gmail.com",age:50},
-//   {name:"aman",email:"aman@gmail.com",age:20},
+//   {name:"shivam",email:"shivam@gmail.com",age:30},
+//   {name:"jman",email:"jman@gmail.com",age:20},
 //   {name:"tanu",email:"tanu@gmail.com",age:30},
 // ]).then((res)=>{
 //   console.log(res);
@@ -99,7 +100,7 @@ const User=mongoose.model('User',userSchema);
 // })
 
 // ---------delete many--------------
-// User.deleteMany({age:35}).then((res)=>{
+// User.deleteMany({name:"aman"}).then((res)=>{
 //   console.log(res);
 // })
 // .catch((err)=>{
@@ -123,3 +124,4 @@ const User=mongoose.model('User',userSchema);
 // .catch((err)=>{
 //   console.log(err);
 // })
+
