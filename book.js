@@ -21,7 +21,7 @@ const bookSchema=mongoose.Schema({
   },
   price:{
     type:Number,
-    min:1,
+    min:[1,"price is to low for amazone "],
   },
   discount:{
     type:Number,
@@ -52,8 +52,8 @@ const Book=mongoose.model('Book',bookSchema);
 // })
 
 // --------update--------
-Book.findByIdAndUpdate("668ef025e5101f11c901e756",{price:-100},{author:"shivam kumar gupta"},{runValidators:true}).then((res)=>{
+Book.findByIdAndUpdate("668ef025e5101f11c901e756",{price:-100},{runValidators:true}).then((res)=>{
 console.log(res);
 }).catch((err)=>{
-console.log(err);
+console.log(err.errors.price.properties.message);
 })
